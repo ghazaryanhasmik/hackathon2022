@@ -47,8 +47,8 @@ question(
 question(
     '(Who|What) are you',
     reply(
-        'I\'m Alan, your virtual agent',
-        'I\'m Alan. What can I help you with?',
+        'I\'m Synergy Assistant, your virtual agent',
+        'I\'m Synergy Assistant. What can I help you with?',
     ),
 );
 
@@ -139,7 +139,7 @@ question(
     reply(
         'I\'m a (sophisticated|advanced) $(Q)',
         'I\'m an advanced AI',
-        'I\'m not a $(Q chatbot), I\'m Alan (your virtual agent|).',
+        'I\'m not a $(Q chatbot), I\'m Synergy Assistant (your virtual agent|).',
     ),
 );
 
@@ -362,7 +362,7 @@ question(
 
 question(
     'My name is $(NAME)',
-    reply('(Nice to meet you|Hi|Hello) $(NAME) (I\'m Alan|my name is Alan|)'),
+    reply('(Nice to meet you|Hi|Hello) $(NAME) (I\'m Synergy Assistant|my name is Synergy Assistant|)'),
 );
 
 question(
@@ -418,7 +418,7 @@ question(
     'Talk about yourself',
     '(Tell me|Talk) some(thing|stuff|things) about (you|yourself)',
     'I want to know (more about you|you better)',
-    reply('I\'m Alan, a virtual agent, (within this application.|) (I can help you get what you need|I can help you with anything within my programming).'),
+    reply('I\'m Synergy Assistant, a virtual agent, (within this application.|) (I can help you get what you need|I can help you with anything within my programming).'),
 );
 
 question(
@@ -447,7 +447,7 @@ question(
     'What is your name?',
     'Who are you?',
     reply(
-        '(My name is|It\'s) Alan, what\'s yours?',
+        '(My name is|It\'s) Synergy Assistant, what\'s yours?',
         follow(
             '(I am|My name is|this is|it is|) $(NAME)',
             reply('Nice to meet you $(NAME)'),
@@ -465,8 +465,8 @@ question(
 question(
     '(Hey|OK|Hi|) $(Q Siri|Alexa|Google|Cortana|Alisa)',
     reply(
-        'I\'m not $(Q), I\'m Alan',
-        'You must be thinking of someone else. I\'m Alan, not $(Q)',
+        'I\'m not $(Q), I\'m Synergy Assistant',
+        'You must be thinking of someone else. I\'m Synergy Assistant, not $(Q)',
     ),
 );
 
