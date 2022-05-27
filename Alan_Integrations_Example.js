@@ -53,9 +53,27 @@
 // - Electron: https://alan.app/docs/client-api/web/electron
 // - Web Component: https://alan.app/docs/client-api/web/web-component
 
+question('Hey Synergy',
+    reply(
+        'Welcome, Can I help you?',
+    ),
+);
 
 
-question(['can I park now?', 'how many free parking spots are available', '6th floor status', 'How many (spots|available&parking in the parking)'] , p => {
+question(['Can I park now?',
+          'Missing anyone?',
+          'Parking (info| free place| free space|)',
+          'Empty space',
+          'Is there (a free place|slot|spot|parking)',
+          'Are there any spots left?',
+          'Free (place|parking|space|spot|slot)',
+          'How many free (spac in parking|parking spots are available)', 
+          'How many spots are (free|not taken)',
+          '6th floor status',
+          'How many (spots|available in the parking|car can park)',
+          'Any (slot|free place|parking lot|spots) (left|remaining)?'
+         
+         ] , p => {
 
     //const api_url = "http://172.17.17.217:33889/parkinglot/6";
     const api_url = "https://azurebot.synisys.com/8e8f766d-837b-4a25-b427-442fd757406a/parking/status/6";
@@ -82,8 +100,30 @@ question(['can I park now?', 'how many free parking spots are available', '6th f
     //p.play('This is an example app with voice capabilities. (Powered by Synergy|Voice support is provided by Synergy)');
 });
 
+question(['Are there (any) (available) (free) meeting rooms.',
+          '(Free|find|search) meeting room',
+         ], p => {
+    p.play('rooms response');
+});
 
-question('open & parking & gate', p => {
+question(['(When is my|) (upcoming|next|nearest) meeting'
+         ], p => {
+    p.play('meeting response');
+});
+
+
+question(['Open (the|parking|) (gate|door|barrier) (please|)',
+          'Jarvis open up',
+          'Sesame open',
+          'Welcome me',
+          'Open (up|please|)',
+          'admin, admin',
+          'Let me in',
+          'Hurry up, I\'m late',
+          'Here I am',
+          'Unlock',
+          '(Parking|), open door'
+         ], p => {
     p.play('gate opened');
 });
 
