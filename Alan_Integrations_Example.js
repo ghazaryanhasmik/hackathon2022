@@ -59,6 +59,67 @@ question('Hey Synergy',
     ),
 );
 
+question(
+    'Check state',
+    reply(
+        'I have a British accent',
+        follow(
+            'Why',
+            reply('Because I was programmed with this accent'),
+        ),
+    ),
+);
+
+question('Are there any available meeting rooms', p =>  {
+    const api_url = "https://azurebot.synisys.com/8e8f766d-837b-4a25-b427-442fd757406a/meeting/freeroom";
+    api.axios.get(api_url)
+        .then( response => {
+        const availableRooms = response.data.rooms;
+        if(!availableRooms.length){
+            reply(
+                p.play("There are no available rooms right now"), answer => {
+                    console.log("answer")
+                }
+            )
+        } 
+        else if(availableRooms.length === 1){
+            reply(
+                p.play("The only available meeting room right now is " + availableRooms.join(", ") + "Hurry up to book"),
+                follow(
+                     reply(
+                          p.play('Do you want me to book it?')
+                     )
+                )
+            )
+        }
+        else {
+            let availableRoomsAsString = availableRooms.join(", ");
+               
+                p.play("The following rooms are available right now:" + availableRoomsAsString);
+            p.play('Do you want me to book it');
+
+                    
+            
+        }
+    }).catch(err => {
+        //p.play("You connected to your local network, please turn off it")
+    });
+},
+        follow(
+        'Yes please',
+        reply(
+            'Which one',
+            follow ('Armenia', 
+                   reply('Booked ara')),
+        ),
+    ),
+        );
+
+question('Jura Blocker bugs for this week',
+    p => {
+  p.play('rooms response');
+});
+
 
 question(['Can I park now?',
           'Missing anyone?',
@@ -102,6 +163,7 @@ question(['Can I park now?',
 
 question(['Are there (any) (available) (free) meeting rooms.',
           '(Free|find|search) meeting room',
+          'Info'
          ], p => {
     p.play('rooms response');
 });
