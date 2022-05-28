@@ -8,15 +8,25 @@ question(
     'hi (there|)',
     'what\'s up',
     reply(
-        'Hello',
-        'Hi (there|)',
-        'Hi, what can I do for you?',
+        '(Hello|Hi), I\'m a Synergy voice assistant'
+    ),
+);
+
+question(
+    '(hello|hey|hi|what\'s up) Synergy',
+    reply(
+        '(Hello|Hi), what can I do for you?'
     ),
 );
 
 question(
     'how are you',
     reply('I\'m doing well. (Thank you|)'),
+);
+
+question(
+    'what (you|can) (you|can) do?',
+    reply('Currently, I can reserve a conference room for you and inform you of any available parking spaces. However, I am always training and will incorporate more methods that will help Synergy make better.' ),
 );
 
 question(
@@ -47,8 +57,8 @@ question(
 question(
     '(Who|What) are you',
     reply(
-        'I\'m Synergy Assistant, your virtual agent',
-        'I\'m Synergy Assistant. What can I help you with?',
+        'I\'m Synergy Voice assistant, your virtual agent',
+        'I\'m Synergy Voice assistant',
     ),
 );
 
@@ -62,6 +72,11 @@ question(
 question(
     'I (just|) want to talk',
     reply('OK, let\'s talk. (What\'s on your mind?|)'),
+);
+
+question(
+    '(which|what) is the best (IT|company) in (our country|Armenia)?',
+    reply('For sure it is the Synergy. The best IT company in Armenia'),
 );
 
 question(
@@ -139,7 +154,7 @@ question(
     reply(
         'I\'m a (sophisticated|advanced) $(Q)',
         'I\'m an advanced AI',
-        'I\'m not a $(Q chatbot), I\'m Synergy Assistant (your virtual agent|).',
+        'I\'m not a $(Q chatbot), I\'m Synergy Voice assistant (your virtual agent|).',
     ),
 );
 
@@ -362,7 +377,7 @@ question(
 
 question(
     'My name is $(NAME)',
-    reply('(Nice to meet you|Hi|Hello) $(NAME) (I\'m Synergy Assistant|my name is Synergy Assistant|)'),
+    reply('(Nice to meet you|Hi|Hello) $(NAME) (I\'m Synergy Voice assistant|my name is Synergy Voice assistant|)'),
 );
 
 question(
@@ -418,7 +433,7 @@ question(
     'Talk about yourself',
     '(Tell me|Talk) some(thing|stuff|things) about (you|yourself)',
     'I want to know (more about you|you better)',
-    reply('I\'m Synergy Assistant, a virtual agent, (within this application.|) (I can help you get what you need|I can help you with anything within my programming).'),
+    reply('I\'m Synergy Voice assistant, a virtual agent, (within this application.|) (I can help you get what you need|I can help you with anything within my programming).'),
 );
 
 question(
@@ -447,7 +462,7 @@ question(
     'What is your name?',
     'Who are you?',
     reply(
-        '(My name is|It\'s) Synergy Assistant, what\'s yours?',
+        '(My name is|It\'s) Synergy Voice assistant, what\'s yours?',
         follow(
             '(I am|My name is|this is|it is|) $(NAME)',
             reply('Nice to meet you $(NAME)'),
@@ -465,8 +480,8 @@ question(
 question(
     '(Hey|OK|Hi|) $(Q Siri|Alexa|Google|Cortana|Alisa)',
     reply(
-        'I\'m not $(Q), I\'m Synergy Assistant',
-        'You must be thinking of someone else. I\'m Synergy Assistant, not $(Q)',
+        'I\'m not $(Q), I\'m Synergy Voice assistant',
+        'You must be thinking of someone else. I\'m Synergy Voice assistant, not $(Q)',
     ),
 );
 
@@ -599,3 +614,4 @@ question(
         ),
     ),
 );
+
