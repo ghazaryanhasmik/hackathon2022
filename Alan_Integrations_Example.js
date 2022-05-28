@@ -105,15 +105,13 @@ question('Are there any available meeting rooms', p =>  {
         //p.play("You connected to your local network, please turn off it")
     });
 },
-        follow(
-        'Yes please',
-        reply(
-            'Which one',
-            follow ('Armenia', 
-                   reply('Booked ara')),
+  follow(
+   'Yes please',
+    reply(
+      'Booked',
         ),
     ),
-        );
+);
 
 question('Jura Blocker bugs for this week',
     p => {
@@ -172,24 +170,6 @@ question(['(When is my|) (upcoming|next|nearest) meeting'
          ], p => {
     p.play('meeting response');
 });
-
-
-question(['Open (the|parking|) (gate|door|barrier) (please|)',
-          'Jarvis open up',
-          'Sesame open',
-          'Welcome me',
-          'Open (up|please|)',
-          'admin, admin',
-          'Let me in',
-          'Hurry up, I\'m late',
-          'Here I am',
-          'Unlock',
-          '(Parking|), open door'
-         ], p => {
-    p.play('gate opened');
-});
-
-
 
 question('what is Synergy (AI|Platform|)', p => {
     p.play('Synergy (AI|Platform) is a platform that will allow you to voice enable any application. Be it mobile app on iOS or Android, or a web page.');
