@@ -111,9 +111,15 @@ question('Are there any available meeting rooms', p =>  {
       'Booked',
         ),
     ),
+  follow(
+   'Not now',
+    reply(
+      'Ok, as you wish',
+        ),
+    ),
 );
 
-question('Jura Blocker bugs for this week',
+question('Jira Blocker bugs for this week',
     p => {
   p.play('rooms response');
 });
